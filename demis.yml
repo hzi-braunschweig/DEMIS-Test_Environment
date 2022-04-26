@@ -169,8 +169,8 @@ services:
     <<: *volume-setup-ref
     container_name: demis-notification-clearing-api
     environment:
-      - HAPI_OIDC_ISSUER=https://localhost:7443/auth/realms/OEGD
-      - HAPI_SERVER_ADDRESS=https://localhost:7443/notification-clearing-api/fhir/
+      - HAPI_OIDC_ISSUER=https://demis.gematik.de:7443/auth/realms/OEGD
+      - HAPI_SERVER_ADDRESS=https://demis.gematik.de:7443/notification-clearing-api/fhir/
     depends_on:
       keycloak:
         condition: service_healthy
@@ -186,7 +186,7 @@ services:
     <<: *volume-setup-ref
     container_name: demis-webservices
     environment:
-      - HAPI_OIDC_ISSUER=https://localhost:7443/auth/realms/LAB
+      - HAPI_OIDC_ISSUER=https://demis.gematik.de:7443/auth/realms/LAB
     depends_on:
       keycloak:
         condition: service_healthy
